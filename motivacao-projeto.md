@@ -4,7 +4,6 @@ Ao observar a rotina de trabalho da minha esposa, que é taxista, e ao vivenciar
 
 Essa constatação motivou-me a pensar em uma solução por meio de um sistema web. Embora tenha gerado diversas ideias para esse sistema, reconheço que nem todas poderão ser contempladas devido às restrições de tempo e à curva de aprendizado. O foco inicial será o desenvolvimento de um sistema CRUD, permitindo o cadastro, visualização, atualização e exclusão de corridas, respeitando todos os requisitos propostos pela disciplina. Com o tempo, pretendo incorporar outras funcionalidades, como:
 
-- Trazer dados relacionados aos custos envolvidos na realização de corridas;
 - Desenvolver dashboards para oferecer aos taxistas uma visão mais clara e fácil da gestão financeira;
 - Criar um planejamento mensal com base no histórico e nas metas definidas pelos taxistas;
 - Disponibilizar uma versão mobile para que os motoristas possam utilizar o aplicativo no seu dia a dia.

@@ -13,6 +13,10 @@ flask-openapi3 = "^3.0.0"
 flask-cors = "^4.0.0"
 sqlalchemy = "^2.0.23"
 sqlalchemy-utils = "^0.41.1"
+google-auth = "^2.31.0"
+google-api-python-client = "^2.136.0"
+google-auth-httplib2 = "^0.2.0"
+google-auth-oauthlib = "^1.2.0"
 
 
 [tool.poetry.group.dev.dependencies]

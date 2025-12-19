@@ -14,6 +14,8 @@ class CorridaSchema(BaseModel):
     id_cliente: str = "83738509020"
     tipo_corrida: str = "aplicativo"
     valor_corrida: float = "10.50"
+    origem_corrida:  str = "Rua jaú, 60, Fortaleza, Ceará"
+    destino_corrida: str = "Rua Delmiro de Farias,1006, Fortaleza, Ceará"
 
     @validator('id_cliente')
     def verificar_cpf(cls,v):
@@ -39,6 +41,13 @@ class CorridaViewSchema(BaseModel):
     tipo_corrida: str
     valor_corrida: float
     hora_registro_corrida: datetime
+    distancia_corrida: float
+    origem_corrida: str
+    destino_corrida: str
+    estado_corrida: str
+    valor_liquido_corrida: float
+    valor_gasolina: float
+
     
 def apresenta_corrida(corrida: Corridas):
     """ 
@@ -49,5 +58,11 @@ def apresenta_corrida(corrida: Corridas):
         "id_cliente": corrida.id_cliente,
         "tipo_corrida": corrida.tipo_corrida,
         "valor_corrida": corrida.valor_corrida,
-        "hora_registro_corrida": corrida.hora_registro_corrida
+        "hora_registro_corrida": corrida.hora_registro_corrida,
+        "origem_corrida": corrida.origem_corrida,
+        "destino_corrida": corrida.destino_corrida,
+        "distancia_corrida": corrida.distancia_corrida,
+        "estado_corrida": corrida.estado_corrida,
+        "valor_liquido_corrida": corrida.valor_liquido_corrida,
+        "valor_gasolina": corrida.valor_gasolina
     }

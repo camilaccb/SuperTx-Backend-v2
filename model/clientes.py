@@ -17,10 +17,11 @@ class Clientes(Base):
     cpf_cliente = Column(String(11), primary_key=True)
     nome = Column(String)
     telefone = Column(String(11), unique=True)
-    data_cadastro = Column(DateTime, default=datetime.now())
+    data_cadastro = Column(DateTime)
+    ultima_atualizacao = Column(DateTime)
     corridas = relationship("Corridas",back_populates="clientes")
 
-    def __init__(self,cpf_cliente:str,nome: str, telefone: str, data_cadastro: Union[DateTime, None] = None):
+    def __init__(self,cpf_cliente:str,nome: str, telefone: str, data_cadastro: Union[DateTime, None] = None, ultima_atualizacao: Union[DateTime, None] = None):
 
         """
         Cria um cliente
@@ -30,11 +31,19 @@ class Clientes(Base):
             nome: nome do cliente cadastrado
             telefone: telefone com ddd do cliente cadastrado
             data_cadastro: dia e hora em que a corrida foi cadastrada no sistema, corresponde ao dia da primeira corrida
+            ultima_atualizacao = dia e hora da última atualização
         """
         self.cpf_cliente = cpf_cliente
         self.nome = nome
         self.telefone = telefone
         self.data_cadastro = data_cadastro if data_cadastro is not None else datetime.now()
+        self.ultima_atualizacao = ultima_atualizacao if ultima_atualizacao is not None else self.data_cadastro
+
+
+
+
+
+        
         
 
         

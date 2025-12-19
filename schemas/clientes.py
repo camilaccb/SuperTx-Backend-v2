@@ -1,7 +1,6 @@
 from pydantic import BaseModel, validator
 from datetime import datetime
 import re
-from typing import List 
 
 from model.clientes import Clientes
 
@@ -43,6 +42,7 @@ class ClienteViewSchema(BaseModel):
     nome: str
     telefone: str
     data_cadastro: datetime
+    data_atualizacao: datetime
 
     
 def apresenta_cliente(cliente: Clientes):
@@ -54,7 +54,8 @@ def apresenta_cliente(cliente: Clientes):
         "cpf_cliente": cliente.cpf_cliente,
         "nome": cliente.nome,
         "telefone": cliente.telefone,
-        "data_cadastro": cliente.data_cadastro
+        "data_cadastro": cliente.data_cadastro,
+        "data_atualizacao": cliente.ultima_atualizacao
     }
 
 class ClienteBuscaSchema(BaseModel):
@@ -78,17 +79,3 @@ class ClienteDelSchema(BaseModel):
     nome: str
     telefone: str
     data_cadastro: datetime
-
-
-class ClienteValioso(BaseModel):
-    """
-    Define o esquema para representação de um cliente valioso
-    """
-    nome_cliente: str
-    total_gasto: float
-
-class ClienteRecorrenteSchema(BaseModel):
-    """
-    Defines como deve ser a estrutura de dado retornado após a requisição de recuperar os clientes mais valiosos
-    """
-    clientes_valiosos: List[ClienteValioso]
