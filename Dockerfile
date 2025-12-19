@@ -1,31 +1,31 @@
-# Base image
+# Imagem base
 FROM python:3.10
 
-# Do not create virtualenvs (recommended for Docker)
+# Não criar virtualenvs (recomendado para Docker)
 ENV POETRY_VIRTUALENVS_CREATE=false \
     POETRY_NO_INTERACTION=1 \
     POETRY_HOME="/opt/poetry"
 
-# Install Poetry
+# Instalar Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
-# Add Poetry to PATH
+# Adicionar Poetry ao PATH
 ENV PATH="$POETRY_HOME/bin:$PATH"
 
-# Set working directory
+# Definir diretório de trabalho
 WORKDIR /app
 
-# Copy only the dependencies files first (for caching)
+# Copiar apenas os arquivos de dependências primeiro (para cache)
 COPY pyproject.toml poetry.lock* ./
 
-# Install project dependencies
+# Instalar dependências do projeto
 RUN poetry install --no-root
 
-# Now copy the rest of the application
+# Agora copiar o restante da aplicação
 COPY . .
 
-# Expose port (optional)
+# Expor porta (opcional)
 EXPOSE 5000
 
-# Start Flask
+# Iniciar Flask
 CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]
