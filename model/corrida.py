@@ -13,8 +13,7 @@ from model import Base
 
 
 def _carregar_chave_api_rotas() -> Union[str, None]:
-    """Carrega a chave da API de rotas a partir de arquivo apontado por
-    `ROUTING_API_KEY_FILE` ou a partir da variável de ambiente `ROUTING_API_KEY`.
+    """Carrega a chave da API de rotas a partir do caminho do arquivo apontado na variável de ambiente `ROUTING_API_KEY`.
     Retorna a chave como string ou None caso não encontrada.
     """
     file_path = os.environ.get("ROUTING_API_KEY_FILE")
@@ -85,7 +84,7 @@ class Corridas(Base):
         url = "https://api.openrouteservice.org/geocode/search"
         key = ROUTING_API_KEY
         if not key:
-            raise RuntimeError("Chave da API de rotas não configurada. Defina a variável de ambiente `ROUTING_API_KEY_FILE` ou `ROUTING_API_KEY`.")
+            raise RuntimeError("Chave da API de rotas não configurada. Defina a variável de ambiente `ROUTING_API_KEY`.")
 
         params = {
             "api_key": key,
@@ -124,7 +123,7 @@ class Corridas(Base):
         url = "https://api.openrouteservice.org/v2/directions/driving-car/json"
         key = ROUTING_API_KEY
         if not key:
-            raise RuntimeError("Chave da API de rotas não configurada. Defina a variável de ambiente `ROUTING_API_KEY_FILE` ou `ROUTING_API_KEY`.")
+            raise RuntimeError("Chave da API de rotas não configurada. Defina a variável de ambiente `ROUTING_API_KEY`.")
 
         headers = {"Authorization": key, "Content-Type": "application/json"}
         body = {"coordinates": [coord_origem, coord_destino]}
