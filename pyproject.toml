@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "SuperTx-backend"
 version = "0.1.0"
-description = "projeto relacionado a primeira sprint do curso de pós graduação de engenharia de software da PuC Rio" 
+description = "projeto relacionado a sprint de arquitetura de software do curso de pós graduação de engenharia de software da PuC Rio" 
 authors = ["Camila Caldas <camisccb@gmail.com>"]
 readme = "README.md"
 packages = [{include = "buddyconnect_backend"}]
