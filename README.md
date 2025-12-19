@@ -8,7 +8,7 @@ Projeto backend da sprint de **Arquitetura de software** do [curso de pós gradu
 
 
 ## Objetivo do projeto
-Sistema web que possibilita o gerencialmento do corridas de taxi. Permite o cadastro, a visualização,atualização e deleção de corridas e clientes. Caso queira entender um pouco mais da motivaçao do projeto, veja esse [documento](https://github.com/camilaccb/BuddyConnect-Backend/blob/main/motivacao-projeto.md). É uma evolução do projeto da disciplina de fullstack, considerando integração com componentes externos e conteinerização.
+Sistema web que possibilita o gerencialmento do corridas de taxi. Permite o cadastro, a visualização,atualização e deleção de corridas e clientes. Caso queira entender um pouco mais da motivaçao do projeto, veja esse [documento](https://github.com/camilaccb/SuperTx-Backend-v2/blob/main/motivacao-projeto.md). É uma evolução do projeto da disciplina de fullstack, considerando integração com componentes externos e conteinerização.
 
 ## Arquitetura do projeto
 O projeto é composto por uma interface (frontend) e um módulo API (backend) que consulta 2 serviços externos. Os componentes se comunicam seguindo o padrão REST. A persistência dos dados do componente do backend é feita utilizando o SQLite. Cada um dos componentes desenvolvidos pode ser executado utilizando container.
@@ -47,7 +47,7 @@ pip install poetry
 ```
 
 > É fortemente indicado o uso de ambientes virtuais do poetry, pois segue a orientação prevista na [PEP 621](https://peps.python.org/pep-0621/) 
-3. Faça a instalação das dependências listadas no [arquivo pyproject.toml](https://github.com/camilaccb/BuddyConnect-Backend/blob/main/pyproject.toml):
+3. Faça a instalação das dependências listadas no [arquivo pyproject.toml](https://github.com/camilaccb/SuperTx-Backend-v2/blob/main/pyproject.toml):
 
 ```bash
 poetry install
